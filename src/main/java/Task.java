@@ -24,8 +24,6 @@ public class Task {
         return isDone;
     }
 
-    public String getType() {return type; }
-
     public String toString(){
         String desc = getDoneIcon() + " " + description;
         return desc;
