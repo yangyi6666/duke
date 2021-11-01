@@ -36,6 +36,34 @@ public class Greet {
                     System.out.println(task.getDoneIcon() + tasklist.taskname(doneIndex));
                     System.out.print("__________________________________________________________\n");
                 }
+            } else if (input.equalsIgnoreCase("todo")) {
+                System.out.println("Got it. I've added this task: ");
+                String newtext = text.split(" ", 2)[1];
+                Todo newtask = new Todo(newtext);
+                System.out.println(newtask.toString());
+                tasklist.addtolist(newtask);
+                System.out.println("Now you have " + tasklist.getlistsize() + " tasks in the list");
+                System.out.print("____________________________________________________________\n");
+            } else if (input.equalsIgnoreCase("deadline")) {
+                System.out.println("Got it. I've added this task: ");
+                String newtext = text.split(" ", 2)[1];
+                String middleword = newtext.split("/by")[0];
+                String deadlinedate = newtext.split("/by")[1];
+                Deadline newtask = new Deadline(middleword,deadlinedate);
+                System.out.println(newtask.toString());
+                tasklist.addtolist(newtask);
+                System.out.println("Now you have " + tasklist.getlistsize() + " tasks in the list");
+                System.out.print("____________________________________________________________\n");
+            } else if (input.equalsIgnoreCase("event")) {
+                System.out.println("Got it. I've added this task: ");
+                String newtext = text.split(" ", 2)[1];
+                String middleword = newtext.split("/at")[0];
+                String eventdate = newtext.split("/at")[1];
+                Event newtask = new Event(middleword,eventdate);
+                System.out.println(newtask.toString());
+                tasklist.addtolist(newtask);
+                System.out.println("Now you have " + tasklist.getlistsize() + " tasks in the list");
+                System.out.print("____________________________________________________________\n");
             } else {
                 Task new_task = new Task(text);
                 tasklist.addtolist(new_task);

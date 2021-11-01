@@ -1,6 +1,7 @@
 public class Task {
     protected String description;
     protected boolean isDone;
+    protected String type;
 
     public Task(String description) {
         this.description = description;
@@ -22,6 +23,8 @@ public class Task {
     public boolean getStatus(){
         return isDone;
     }
+
+    public String getType() {return type; }
 
     public String toString(){
         String desc = getDoneIcon() + " " + description;
