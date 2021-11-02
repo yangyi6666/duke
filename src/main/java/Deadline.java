@@ -5,10 +5,11 @@ public class Deadline extends Task {
     public Deadline(String description, String date) {
         super(description);
         this.date = date;
+        this.type = "D";
     }
 
     @Override
     public String toString() {
-        return "[D]" + super.toString() + " (by: " + date + ")";
+        return "[" + getType() + "]" + super.toString() + " (by: " + date + ")";
     }
 }

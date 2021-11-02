@@ -26,6 +26,10 @@ public class Tasklist {
 
     }
 
+    public void delete(int index){
+        tasks.remove(index-1);
+    }
+
     public String taskname(int index){
         return tasks.get(index-1).description;
     }
