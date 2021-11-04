@@ -30,6 +30,10 @@ public class Tasklist {
         tasks.remove(index-1);
     }
 
+    public Task getIndex (int index){
+        return this.tasks.get(index-1);
+    }
+
     public String taskname(int index){
         return tasks.get(index-1).description;
     }

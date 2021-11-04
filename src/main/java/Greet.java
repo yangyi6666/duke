@@ -37,7 +37,7 @@ public class Greet {
                     task.mark_done();
                     tasklist.done(doneIndex);
                     System.out.print("Nice! I've marked this task as done:\n");
-                    System.out.println(task.getDoneIcon() + tasklist.taskname(doneIndex) + task.getName());
+                    System.out.println(tasklist.getIndex(doneIndex));
                     System.out.print("__________________________________________________________\n");
                 } catch (Exception e){
                     throw new DukeException("☹ OOPS!!! The is no such task in the list, please try another one.");
@@ -90,7 +90,7 @@ public class Greet {
                 try {
                     int delete_index = Integer.valueOf(text.split(" ")[1]);
                     System.out.print("Noted. I've removed this task:\n");
-                    System.out.println(task.getDoneIcon() + " " + tasklist.taskname(delete_index));
+                    System.out.println(tasklist.getIndex(delete_index));
                     tasklist.delete(delete_index);
                     System.out.print("__________________________________________________________\n");
                     System.out.println("Now you have " + tasklist.getlistsize() + " tasks in the list");
