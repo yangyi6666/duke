@@ -84,21 +84,10 @@ public class parser {
                 ui.validateDelete(command, taskList);
                 command delete = new DeleteCommand(command);
                 return delete;
-            /*
-            case VIEW:
-                try{
-                    Ui.validateViewCommand(command);
-                    LocalDate date = parseDate(command);
-                    return new ViewCommand(date);
-                }catch (DateTimeParseException e) {
-                    return new InvalidCommand("☹ Please enter datetime in the format of 'd/M/yyyy'");
-                }
-            case SEARCH:
-                Ui.validateSearchCommand(command);
+            case FIND:
+                ui.validateFind(command);
                 String keyword = command[1];
-                return new SearchCommand(keyword);
-
-             */
+                return new FindCommand(keyword);
             case BYE:
                 return new ByeCommand();
             default:

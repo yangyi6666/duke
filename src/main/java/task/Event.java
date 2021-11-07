@@ -25,4 +25,8 @@ public class Event extends Task {
         return date_time.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.SHORT));
     }
 
+    public String[] getKeyword (){
+        return description.split("/at");
+    }
+
 }

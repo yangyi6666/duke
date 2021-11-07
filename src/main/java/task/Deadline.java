@@ -26,4 +26,8 @@ public class Deadline extends Task {
     public  String getDateTimeStr() {
         return date.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.SHORT));
     }
+
+    public String[] getKeyword (){
+        return description.split("/by");
+    }
 }

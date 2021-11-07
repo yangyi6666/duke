@@ -47,5 +47,26 @@ public class Tasklist {
         return tasks.size();
     }
 
+    public boolean contains(Task t){return tasks.contains(t);}
+
+    public Tasklist getTaskByKeyword (String keyword, Tasklist taskList) throws IndexOutOfBoundsException{
+        Tasklist taskByKeyword = new Tasklist();
+        for (int i = 0; i < taskList.getlistsize(); i++){
+            String[] keywordInTask = taskList.get(i).getKeyword()[0].split(" ");
+            for (String s : keywordInTask){
+                if (s.contains(keyword) || keyword.contains(s)) {
+                    if (!taskByKeyword.contains(taskList.get(i))){
+                        taskByKeyword.addTask(taskList.get(i));
+                    }
+                }
+            }
+        }
+        return taskByKeyword;
+    }
+
+    public void addTask (Task t) {
+        tasks.add(t);
+    }
+
 
 }

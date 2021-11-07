@@ -45,5 +45,7 @@ public class Task {
         return "";
     }
 
-
+    public String[] getKeyword(){
+        return description.split(" ");
+    }
 }

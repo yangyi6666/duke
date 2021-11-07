@@ -109,6 +109,16 @@ public class ui {
         System.out.println("\t"+taskList.get(i).toString());
     }
 
+    public static void validateFind(String[] command){
+        if (command.length < 2 || command[1].equals("")) {
+            throw new DukeException("☹ Please specify keyword:");
+        }
+    }
+
+    public void printTaskByKeyword(Tasklist taskList, String keyword){
+        System.out.println("You have total " + (taskList.getlistsize()) +" tasks related to <" + keyword +">.");
+    }
+
     public void errorMessage (Exception e) {
         System.out.println(e.getMessage());
     }
