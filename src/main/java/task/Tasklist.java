@@ -1,3 +1,5 @@
+package task;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -5,29 +7,32 @@ import java.util.List;
 public class Tasklist {
     private List<Task> tasks;
 
-    Tasklist(){
+    public Tasklist(ArrayList<Task> load){
         this.tasks = new ArrayList<>();
+    }
+
+    public Tasklist() {
+        tasks = new ArrayList<>();
     }
 
     public void addtolist(Task task){
         tasks.add(task);
     }
 
-    public String print_list(){
-        String result = "";
-        for(int i =0; i < tasks.size(); i++){
-            result += String.valueOf(i+1) + "." + " " + tasks.get(i) + "\n";
-        }
-        return result;
+    public Task get(int i) {
+        return tasks.get(i);
     }
 
     public void done(int index){
         tasks.get(index-1).mark_done();
+    }
 
+    public ArrayList<Task> getTasks() {
+        return (ArrayList<Task>) tasks;
     }
 
     public void delete(int index){
-        tasks.remove(index-1);
+        tasks.remove(index);
     }
 
     public Task getIndex (int index){
@@ -41,5 +46,6 @@ public class Tasklist {
     public int getlistsize(){
         return tasks.size();
     }
+
 
 }

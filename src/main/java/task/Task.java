@@ -1,7 +1,11 @@
+package task;
+
+
 public class Task {
     protected String description;
     protected boolean isDone;
     protected String type;
+
 
     public Task(String description) {
         this.description = description;
@@ -11,6 +15,10 @@ public class Task {
     public String getName(){
         return  description;
     }
+
+    public boolean isDone() { return isDone; }
+
+    public void setDone(boolean isDone) {this.isDone = isDone;}
 
     public void mark_done(){
         isDone = true;
@@ -28,4 +36,14 @@ public class Task {
         String desc = getDoneIcon() + " " + description;
         return desc;
     }
+
+    public String getTaskStr() {
+        return "";
+    }
+
+    public String getDateTimeStr(){
+        return "";
+    }
+
+
 }
