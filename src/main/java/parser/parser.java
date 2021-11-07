@@ -51,7 +51,7 @@ public class parser {
         try {
             commandFilter = CommandFilter.valueOf(instruction);
         } catch (IllegalArgumentException e) {
-            System.out.println("☹ Invalid Command");
+            System.out.println("Invalid Command");
         }
 
 
@@ -91,7 +91,7 @@ public class parser {
             case BYE:
                 return new ByeCommand();
             default:
-                return new InvalidCommand("☹ Sorry, I don't know what it means :-(");
+                return new InvalidCommand("Sorry, I don't know what it means :-(");
         }
 
     }
