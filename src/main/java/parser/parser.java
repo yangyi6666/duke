@@ -12,8 +12,12 @@ import command.*;
 
 public class parser {
 
-    private static String[] commandToArray(String parseText) {
+    public static String[] commandToArray(String parseText) {
         return parseText.split(" ",2);
+    }
+
+    public static String[] dateToArray(String parseText) {
+        return parseText.split(" /by | /at ",2);
     }
 
     public static LocalDate parseDate(String[] command) throws DateTimeParseException{
@@ -23,14 +27,21 @@ public class parser {
         return date;
     }
 
-    public static LocalDateTime parserDateTime(String[] command) throws DateTimeParseException{
+    public static LocalDateTime parseDateTime(String[] command) throws DateTimeParseException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy HHmm");
         LocalDateTime dateTime;
         dateTime = LocalDateTime.parse(command[1].split(" /by | /at ")[1], formatter);
         return dateTime;
     }
 
-    public static command parse(String text, Tasklist taskList) throws IllegalArgumentException{
+    public static LocalDateTime parseDateTimeFromFile(String[] command) throws DateTimeParseException {
+        DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.SHORT);
+        LocalDateTime dateTimeFromFile;
+        dateTimeFromFile = LocalDateTime.parse(command[1].split(" /by | /at ")[1], formatter);
+        return dateTimeFromFile;
+    }
+
+    public static command parser(String text, Tasklist taskList) throws IllegalArgumentException{
         assert text != null : "Command be null";
         String[] command = commandToArray(text);
         String instruction = command[0].toUpperCase();
@@ -51,7 +62,7 @@ public class parser {
             case DEADLINE:
                 try{
                     ui.deadline_error(command);
-                    dateTime = parser.parserDateTime(command);
+                    dateTime = parser.parseDateTime(command);
                     return new AddCommand(new Deadline(text,dateTime));
                 }catch (DateTimeParseException e) {
                     return new InvalidCommand(ui.validateDateTime());
@@ -59,7 +70,7 @@ public class parser {
             case EVENT:
                 try{
                     ui.event_error(command);
-                    dateTime = parser.parserDateTime(command);
+                    dateTime = parser.parseDateTime(command);
                     return new AddCommand(new Event(text,dateTime));
                 }catch (DateTimeParseException e) {
                     return new InvalidCommand(ui.validateDateTime());

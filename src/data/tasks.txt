@@ -1,3 +1,2 @@
-Deadline: [D][X]readbook /by 2 Jan 2010, 8:00 pm
-Deadline: [D][ ]watchtv /by 1 Jan 2020, 1:00 pm
-Event: [E][ ]playgame /at 3 Jan 2021, 3:00 pm
+Todo [T][X]read book
+Deadline [D][X]watch tv /by 2 Feb 2020, 8:00 pm

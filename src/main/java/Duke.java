@@ -13,6 +13,7 @@ public class Duke {
     private Storage storage;
     private ui ui;
 
+
     public Duke(String filePath) {
         ui = new ui();
         storage = new Storage(filePath);
@@ -33,7 +34,7 @@ public class Duke {
             try {
                 String userInput = ui.input();
                 ui.Separator();
-                command c = parser.parse(userInput, tasklist);
+                command c = parser.parser(userInput, tasklist);
                 c.execute(tasklist, ui, storage);
                 isExit = c.isExit();
             } catch (DukeException | IOException e){
@@ -45,7 +46,7 @@ public class Duke {
     }
 
     public static void main(String[] args){
-        new Duke("src/data/tasks.txt").run();
+        new Duke("/src/data/tasks.txt").run();
     }
 
 }

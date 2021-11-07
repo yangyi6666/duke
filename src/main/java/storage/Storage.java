@@ -6,12 +6,10 @@ import parser.*;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
-import java.time.format.DateTimeFormatter;
 
 public class Storage {
 
@@ -35,16 +33,17 @@ public class Storage {
             String type = task.getType();
             String toText = null;
             String description = task.getTaskStr();
+            String dateTime = task.getDateTimeStr();
 
             switch (type){
                 case "T":
-                    toText = "Todo: " +description + "\n";
+                    toText = "Todo " + description + "\n";
                     break;
                 case "D":
-                    toText = "Deadline: " + description + "/by " + task.getDateTimeStr()+ "\n";
+                    toText = "Deadline " + description + "/by " + dateTime + "\n";
                     break;
                 case "E":
-                    toText = "Event: " +description + "/at " + task.getDateTimeStr() + "\n";
+                    toText = "Event " +description + "/at " + dateTime + "\n";
                     break;
             }
             assert toText != null;
@@ -62,7 +61,7 @@ public class Storage {
             String text = sc.nextLine();
             String parseText = text.replaceAll(" \\[.*?\\] ", " ");
             boolean isDone = text.contains("X");
-            String[] command = commandToArray(parseText);
+            String[] command = parser.commandToArray(parseText);
             String keyword = command[0];
             LocalDateTime dateTime;
             Task task;
@@ -72,24 +71,18 @@ public class Storage {
                 task.setDone(isDone);
             }
             else if(keyword.equals("Deadline")){
-                dateTime = parser.parserDateTime(command);
+                dateTime = parser.parseDateTimeFromFile(command);
                 task = new Deadline(parseText, dateTime);
                 task.setDone(isDone);
             }
             else{
-                dateTime = parser.parserDateTime(command);
+                dateTime = parser.parseDateTimeFromFile(command);
                 task = new Event(parseText, dateTime);
                 task.setDone(isDone);
             }
             taskList.add(task);
         }
         return taskList;
-    }
-
-
-
-    private String[] commandToArray(String parseText) {
-        return parseText.split(" ");
     }
 
 }

@@ -11,4 +11,8 @@ public class Todo extends Task {
     public String toString(){
         return "[" + getType() + "]"  + super.toString();
     }
+
+    public String getTaskStr() {
+        return "[" + getType() + "]" + getDoneIcon() + description.substring(5);
+    }
 }
