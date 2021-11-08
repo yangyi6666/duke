@@ -54,12 +54,12 @@ public class Storage {
 
 
     public ArrayList<Task> load() throws FileNotFoundException {
-        ArrayList<Task> taskList = new ArrayList<>();
+        Tasklist taskList = new Tasklist();
         File file = new File(filePath);
         Scanner sc = new Scanner(file);
         while(sc.hasNext()){
             String text = sc.nextLine();
-            String parseText = text.replaceAll(" \\[.*?\\] ", " ");
+            String parseText = text.replaceAll(" \\[.*?] ", " ");
             boolean isDone = text.contains("X");
             String[] command = parser.commandToArray(parseText);
             String keyword = command[0];
@@ -80,7 +80,7 @@ public class Storage {
                 task = new Event(parseText, dateTime);
                 task.setDone(isDone);
             }
-            taskList.add(task);
+            taskList.addtolist(task);
         }
         return taskList;
     }

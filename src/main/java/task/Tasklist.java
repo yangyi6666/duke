@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Tasklist {
-    private List<Task> tasks;
+public class Tasklist extends ArrayList<Task> {
+    private ArrayList<Task> tasks;
 
     public Tasklist(ArrayList<Task> load){
         this.tasks = new ArrayList<>();
