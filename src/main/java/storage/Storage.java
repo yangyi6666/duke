@@ -54,7 +54,7 @@ public class Storage {
 
 
     public ArrayList<Task> load() throws FileNotFoundException {
-        Tasklist taskList = new Tasklist();
+        ArrayList<Task> taskList = new ArrayList<>();
         File file = new File(filePath);
         Scanner sc = new Scanner(file);
         while(sc.hasNext()){
@@ -80,7 +80,7 @@ public class Storage {
                 task = new Event(parseText, dateTime);
                 task.setDone(isDone);
             }
-            taskList.addtolist(task);
+            taskList.add(task);
         }
         return taskList;
     }

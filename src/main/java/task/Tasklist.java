@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Tasklist extends ArrayList<Task> {
+public class Tasklist{
     private ArrayList<Task> tasks;
 
     public Tasklist(ArrayList<Task> load){
-        this.tasks = new ArrayList<>();
+        this.tasks = load;
     }
 
     public Tasklist() {
