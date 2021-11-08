@@ -47,19 +47,19 @@ public class ui {
 
     public static void todo_error(String[] command) {
         if (command.length < 2 || command[1].equals("")) {
-            throw new DukeException("☹ OOPS!!! The description of a todo cannot be empty.");
+            throw new DukeException("OOPS!!! The description of a todo cannot be empty.");
         }
     }
 
     public static void deadline_error(String[] command) {
         if (command.length < 2 || command[1].equals("")) {
-            throw new DukeException("☹ OOPS!!! The description of a deadline cannot be empty.");
+            throw new DukeException("OOPS!!! The description of a deadline cannot be empty.");
         }
     }
 
     public static void event_error(String[] command) {
         if (command.length < 2 || command[1].equals("")) {
-            throw new DukeException("☹ OOPS!!! The description of a event cannot be empty.");
+            throw new DukeException("OOPS!!! The description of a event cannot be empty.");
         }
     }
 
@@ -81,11 +81,11 @@ public class ui {
 
     public static void validateDone(String[] command, Tasklist taskList){
         if (command.length < 2 || command[1].equals("")) {
-            throw new DukeException("☹ Please state task number.");
+            throw new DukeException("Please state task number.");
         }
         int taskNumber  = Integer.parseInt(command[1]) - 1;
         if (taskNumber >= taskList.getlistsize()) {
-            throw new DukeException("☹ There is no such task.");
+            throw new DukeException("There is no such task.");
         }
     }
 
@@ -96,11 +96,11 @@ public class ui {
 
     public static void validateDelete(String[] command, Tasklist taskList){
         if (command.length < 2 || command[1].equals("")) {
-            throw new DukeException("☹ Please state task number.");
+            throw new DukeException("Please state task number.");
         }
         int taskNumber  = Integer.parseInt(command[1]) - 1;
         if (taskNumber >= taskList.getlistsize()) {
-            throw new DukeException("☹ There is no such task.");
+            throw new DukeException("There is no such task.");
         }
     }
 
@@ -111,7 +111,7 @@ public class ui {
 
     public static void validateFind(String[] command){
         if (command.length < 2 || command[1].equals("")) {
-            throw new DukeException("☹ Please specify keyword:");
+            throw new DukeException("Please specify keyword:");
         }
     }
 

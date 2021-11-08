@@ -1,2 +1,1 @@
-Todo [T][X]read book
-Deadline [D][X]watch tv /by 2 Feb 2020, 8:00 pm
+Todo [T][ ]read book
