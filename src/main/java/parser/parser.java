@@ -16,6 +16,7 @@ public class parser {
         return parseText.split(" ",2);
     }
 
+
     public static String[] dateToArray(String parseText) {
         return parseText.split(" /by | /at ",2);
     }

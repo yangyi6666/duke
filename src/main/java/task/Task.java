@@ -33,8 +33,10 @@ public class Task {
     }
 
     public String toString(){
-        String desc = getDoneIcon() + " " + description;
-        return desc;
+        /*String desc = getDoneIcon() + " " + description;
+
+         */
+        return "";
     }
 
     public String getTaskStr() {

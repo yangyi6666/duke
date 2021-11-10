@@ -16,11 +16,11 @@ public class Deadline extends Task {
 
     @Override
     public String toString() {
-        return "[" + getType() + "]" + super.toString();
+        return "[" + getType() + "]"  + getDoneIcon() + " " + getName();
     }
 
     public String getTaskStr() {
-        return "[" + getType() + "]" + getDoneIcon() +description.substring(9,description.indexOf('/'));
+        return "[" + getType() + "]"  + getDoneIcon() + " " +description.substring(9,description.indexOf('/'));
     }
 
     public  String getDateTimeStr() {

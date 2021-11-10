@@ -16,10 +16,10 @@ public class Event extends Task {
 
     @Override
     public String toString() {
-        return "[" + getType() + "]" + super.toString();
+        return "[" + getType() + "]"  + getDoneIcon() + " " +  getName();
     }
 
-    public String getTaskStr() {return "[" + getType() + "]" + getDoneIcon() + description.substring(6,description.indexOf('/'));}
+    public String getTaskStr() {return  "[" + getType() + "]"  + getDoneIcon() + " " +description.substring(6,description.indexOf('/'));}
 
     public String getDateTimeStr() {
         return date_time.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.SHORT));

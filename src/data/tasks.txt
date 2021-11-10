@@ -1,1 +1,6 @@
-Deadline [D][ ]play game /by 2 Feb 2020, 12:00 pm
+Deadline [D][ ] play game /by 2 Feb 2020, 12:00 pm
+Todo [T][ ] read book
+Todo [T][ ] play
+Todo [T][ ] get up
+Todo [T][ ] find book
+Todo [T][X] Play piano
