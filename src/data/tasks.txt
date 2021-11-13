@@ -1,6 +1,10 @@
-Deadline [D][ ] play game /by 2 Feb 2020, 12:00 pm
+Deadline [D][X] play game /by 2 Feb 2020, 12:00 pm
 Todo [T][ ] read book
-Todo [T][ ] play
-Todo [T][ ] get up
-Todo [T][ ] find book
+Todo [T][X] play
 Todo [T][X] Play piano
+Event [E][ ] see doctor /at 1 Feb 2003, 9:20 pm
+Deadline [D][ ] eat dinner /by 2 Mar 2020, 8:00 pm
+Todo [T][ ] play game
+Deadline [D][ ] study for exam /by 13 Nov 2021, 11:59 pm
+Event [E][ ] java lecture /at 15 Nov 2021, 6:00 pm
+Deadline [D][ ] return book /by 14 Nov 2020, 12:00 pm

@@ -6,6 +6,9 @@ import ui.ui;
 import exception.*;
 import java.io.*;
 
+/**
+ * parent class for all types of commands
+ */
 public abstract class command {
     protected boolean isExit = false;
 

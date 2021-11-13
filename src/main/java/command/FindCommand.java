@@ -5,6 +5,9 @@ import storage.Storage;
 import task.*;
 import ui.ui;
 
+/**
+ * find command
+ */
 public class FindCommand extends command {
 
     String keyword;

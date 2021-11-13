@@ -3,7 +3,10 @@ package task;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * tasklist contains all the tasks in arraylist format
+ * contains all the functions to tasks
+ */
 public class Tasklist{
     private ArrayList<Task> tasks;
 

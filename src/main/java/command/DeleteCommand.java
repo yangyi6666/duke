@@ -6,6 +6,9 @@ import ui.ui;
 
 import java.io.IOException;
 
+/**
+ * delete command
+ */
 public class DeleteCommand extends command{
     String[] command;
 

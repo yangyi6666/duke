@@ -10,23 +10,16 @@ import task.*;
 import ui.*;
 import command.*;
 
+/**
+ * class parser change the user's command to which the code could read
+ * the user's command would be converted to expected format
+ */
 public class parser {
 
     public static String[] commandToArray(String parseText) {
         return parseText.split(" ",2);
     }
 
-
-    public static String[] dateToArray(String parseText) {
-        return parseText.split(" /by | /at ",2);
-    }
-
-    public static LocalDate parseDate(String[] command) throws DateTimeParseException{
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy");
-        LocalDate date;
-        date = LocalDate.parse(command[1], formatter);
-        return date;
-    }
 
     public static LocalDateTime parseDateTime(String[] command) throws DateTimeParseException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy HHmm");

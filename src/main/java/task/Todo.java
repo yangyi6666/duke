@@ -1,5 +1,8 @@
 package task;
 
+/**
+ * class todo takes "todo" type of task and convert input to task format
+ */
 public class Todo extends Task {
 
     public Todo(String description){

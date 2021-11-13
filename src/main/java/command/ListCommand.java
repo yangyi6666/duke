@@ -4,6 +4,9 @@ import storage.Storage;
 import task.*;
 import ui.*;
 
+/**
+ * list command to show list
+ */
 public class ListCommand extends command {
 
     public ListCommand (){}

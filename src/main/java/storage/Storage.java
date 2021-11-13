@@ -11,9 +11,16 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
 
+/**
+ * class storage contains save and load functions
+ * it save the tasklist to txt format locally
+ * be able to load from local harddisk
+ */
 public class Storage {
 
     protected String filePath;
+
+    public String getFilePath(){return filePath;}
 
     public Storage (String filePath){
         this.filePath = filePath;

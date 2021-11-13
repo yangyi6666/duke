@@ -7,6 +7,9 @@ import ui.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/**
+ * Main Class "Duke"
+ */
 public class Duke {
 
     private Tasklist tasklist;

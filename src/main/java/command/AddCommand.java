@@ -5,6 +5,9 @@ import task.*;
 import ui.ui;
 import java.io.*;
 
+/**
+ * add command to tasklist, call storage and ui to save and display message to user
+ */
 
 public class AddCommand extends command {
 

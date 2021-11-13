@@ -5,6 +5,9 @@ import storage.*;
 import task.*;
 import ui.*;
 
+/**
+ * invalide command and show error message
+ */
 public class InvalidCommand extends command{
     private final String errorMsg;
 

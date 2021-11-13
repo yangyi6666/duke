@@ -6,6 +6,9 @@ import ui.ui;
 
 import java.io.IOException;
 
+/**
+ * done command
+ */
 public class DoneCommand extends command{
     String[] command;
 
